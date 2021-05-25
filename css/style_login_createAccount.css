@@ -1,0 +1,37 @@
+body{
+    text-align: center;
+    display: grid;
+    grid-template-areas:
+    '. header header .'
+    '. login register .'
+    '. settings settings .';
+}
+
+header{
+    grid-area: header;
+}
+
+.login{
+    grid-area: login;
+    border: 1px solid black;
+    font-size: 2em;
+    height: 10em;
+}
+
+.register{
+    grid-area: register;
+    border: 1px solid black;
+    font-size: 2em;
+}
+
+.settings{
+    grid-area: settings;
+    border: 1px solid black;
+    border-top: none;
+    font-size: 2em;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
