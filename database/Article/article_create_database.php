@@ -9,12 +9,19 @@ $select_id_user->execute();
 
 $fetch_id_user = $select_id_user->fetch();
 
-$create_article = $bdd->prepare('INSERT INTO articles(id_user,title,smallDesc,content,categorie) VALUES(:id_user,:title,:smallDesc,:content,:categorie)');
-$create_article->bindParam(':id_user',$fetch_id_user['id_user']);
-$create_article->bindParam(':title', $_POST['title']);
-$create_article->bindParam(':smallDesc', $_POST['smallDesc']);
-$create_article->bindParam(':content', $_POST['content']);
-$create_article->bindParam(':categorie', $_POST['categorie']);
-$create_article->execute();
+if(!empty($_POST['title']) && !empty($_POST['smallDesc']) && !empty($_POST['content']) && !empty($_POST['categorie'])){
+    $create_article = $bdd->prepare('INSERT INTO articles(id_user,title,smallDesc,content,categorie) VALUES(:id_user,:title,:smallDesc,:content,:categorie)');
+    $create_article->bindParam(':id_user',$fetch_id_user['id_user']);
+    $create_article->bindParam(':title', $_POST['title']);
+    $create_article->bindParam(':smallDesc', $_POST['smallDesc']);
+    $create_article->bindParam(':content', $_POST['content']);
+    $create_article->bindParam(':categorie', $_POST['categorie']);
+    $create_article->execute();
+    
+    header('Location: ../../index.php');
+}else{
+    header('Location: ../../layouts/create_articles.php');
+}
+
 
 ?>
