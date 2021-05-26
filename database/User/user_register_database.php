@@ -3,6 +3,8 @@ session_start();
 include('../../login_database.php');
 include('../connection_database.php');
 
+$_SESSION['username'] = $_POST['RegisterPseudo'];
+
 if(!empty($_POST['RegisterPseudo']) && !empty($_POST['RegisterPass'])){
     $pass_hash = password_hash($_POST['RegisterPass'], PASSWORD_DEFAULT);
     $user_info = $bdd->prepare('INSERT INTO user(username,pass) VALUES(:RegisterPseudo, :pass)');
