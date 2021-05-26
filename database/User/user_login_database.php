@@ -16,7 +16,7 @@ if(isset($_POST['LoginPseudo'])){
         $_SESSION['id_user'] = $donnees['id'];
         header('Location: ../../index.php');
     }else{
-        header('Location: ../../index.php');
+        header('Location: ../../layouts/login_createAccount.php');
    }
  }
 
