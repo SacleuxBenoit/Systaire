@@ -14,7 +14,7 @@
 
     <div class="login">
         <h2><label for="LoginPseudo">Login</label></h2>
-        <form action="./Database/User/user_login_database.php" method="post">
+        <form action="../Database/User/user_login_database.php" method="post">
             <p>
                 <label for="LoginPseudo">Pseudo :</label>
                 <input type="text" id="LoginPseudo" name="LoginPseudo">
@@ -30,7 +30,7 @@
 
     <div class="register">
         <h2> <label for="RegisterPseudo">Register</label></h2>
-        <form action="./Database/User/user_register_database.php" method="post">
+        <form action="../Database/User/user_register_database.php" method="post">
             <p>
                 <label for="RegisterPseudo">Pseudo :</label>
                 <input type="text" id="RegisterPseudo" name="RegisterPseudo">
@@ -46,7 +46,7 @@
 
     <div class="settings">
         <h2><label for="SettingsPseudo">Settings</label></h2>
-        <form action="./Database/User/user_settings_database.php" method="post">
+        <form action="../Database/User/user_settings_database.php" method="post">
             <p>
                 <label for="SettingsPseudo">Pseudo :</label>
                 <input type="text" id="SettingsPseudo" name="SettingsPseudo">
