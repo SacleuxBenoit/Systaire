@@ -13,7 +13,7 @@
     ?>
 
     <div>
-        <form action="#" method="post">
+        <form action="../database/Article/article_create_database.php" method="post">
             <p>
                 <label for="title">Titre :</label>
                 <input type="text" name="title" id="title">
@@ -25,8 +25,8 @@
             </p>
 
             <p>
-                <label for="description">description :</label>
-                <input type="text" name="description" id="description">
+                <label for="smallDesc">description :</label>
+                <input type="text" name="smallDesc" id="smallDesc">
             </p>
 
             <p>
