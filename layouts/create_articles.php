@@ -30,6 +30,11 @@
             </p>
 
             <p>
+                <label for="categorie">categorie :</label>
+                <input type="text" name="categorie" id="categorie">
+            </p>
+
+            <p>
                 <input type="submit" value="Submit">
             </p>
         </form>
