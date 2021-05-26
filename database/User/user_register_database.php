@@ -13,6 +13,11 @@ if(!empty($_POST['RegisterPseudo']) && !empty($_POST['RegisterPass'])){
     $user_id = $bdd->prepare('SELECT id FROM user WHERE username = :username');
     $user_id->bindParam(':username', $_POST['RegisterPseudo']);
     $user_id->execute();
+
+    header('Location: ../../index.php');
+}else
+{
+    header('Location: ../../index.php');
 }
 
 ?>
