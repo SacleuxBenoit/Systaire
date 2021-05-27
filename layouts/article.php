@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('../login_database.php');
+include('../database/connection_database.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +15,17 @@ session_start();
 <body>
     <?php
         include('../components/header.php');
+
+        $get_article = $bdd->prepare('SELECT title,content,categorie FROM articles WHERE title = :title');
+        $get_article->bindParam(':title', $_GET['title']);
+        $get_article->execute();
+
+        $display_article = $get_article->fetch();
     ?>
+
+    <div>
+        <p><h2><?php echo $display_article['title']?></h2></p>
+        <p><?php echo $display_article['content']?></p>
+    </div>
 </body>
 </html>
