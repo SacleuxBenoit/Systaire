@@ -22,3 +22,10 @@ ul{
 
     box-shadow: 0 4px 6px -6px #222;
 }
+
+/* ------------------------------- Article -------------------------------*/
+
+.article{
+    border-bottom: 0.5px solid black;
+    width: 55%;
+}

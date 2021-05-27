@@ -1,5 +1,7 @@
 <?php
 session_start();
+include('./login_database.php');
+include('./database/connection_database.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +15,18 @@ session_start();
 <body>
     <?php
         include('./components/header.php');
+
+        $get_article = $bdd->query('SELECT * FROM articles LIMIT 10');
+        $get_article->execute();
+
+        while($display_article = $get_article->fetch()){
+            ?>
+                <div class="article">
+                    <p><h2><?php echo $display_article['title'] ?></h2></p>
+                    <p><?php echo $display_article['smallDesc']?></p>
+                </div>
+            <?php
+        }
     ?>
 </body>
 </html>
