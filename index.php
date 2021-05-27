@@ -22,7 +22,7 @@ include('./database/connection_database.php');
         while($display_article = $get_article->fetch()){
             ?>
                 <div class="article">
-                    <p><h2><?php echo $display_article['title'] ?></h2></p>
+                    <p><h2><a href="./layouts/article.php?title=<?php echo $display_article['title']?>"><?php echo $display_article['title'] ?></a></h2></p>
                     <p><?php echo $display_article['smallDesc']?></p>
                 </div>
             <?php
