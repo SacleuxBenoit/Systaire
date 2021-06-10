@@ -17,10 +17,11 @@ a{
 
 ul{    
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     list-style-type: none;
-
     box-shadow: 0 4px 6px -6px #222;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
 /* ------------------------------- Article -------------------------------*/
