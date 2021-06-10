@@ -4,7 +4,10 @@
     <ul>
         <li><a href="#">Accueil</a></li>
         <li><a href="#">Top lectures</a></li>
-        <li><a href="#">PlacerHolder</a></li>
+        <li><a href="#">Space x</a></li>
+        <li><a href="#">Nasa</a></li>
+        <li><a href="#">Usa</a></li>
+        <li><a href="#">Europe</a></li>
         <li><a href="http://localhost:8888/test/Systaire/layouts/create_articles.php">Create articles</a></li>
         <?php
             if(empty($_SESSION['username'])){
