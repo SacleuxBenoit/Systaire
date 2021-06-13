@@ -1,13 +1,18 @@
+<?php
+    $get_categorie = $bdd->query('SELECT DISTINCT categorie FROM categorie');
+    $get_categorie->execute();
+?>
 <header>
     <h1><a href="http://localhost:8888/test/Systaire/">Systaire</a></h1>
 
     <ul>
         <li><a href="#">Accueil</a></li>
         <li><a href="#">Top lectures</a></li>
-        <li><a href="#">Space x</a></li>
-        <li><a href="#">Nasa</a></li>
-        <li><a href="#">Usa</a></li>
-        <li><a href="#">Europe</a></li>
+        <?php
+            while($fetch_categorie = $get_categorie->fetch()){
+                echo '<li>' . '<a href="#">' . $fetch_categorie['categorie'] . '</a>' . '</li>';
+            }
+        ?>
         <li><a href="http://localhost:8888/test/Systaire/layouts/create_articles.php">Create articles</a></li>
         <?php
             if(empty($_SESSION['username'])){
