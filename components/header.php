@@ -7,10 +7,11 @@
 
     <ul>
         <li><a href="#">Accueil</a></li>
-        <li><a href="#">Top lectures</a></li>
         <?php
             while($fetch_categorie = $get_categorie->fetch()){
-                echo '<li>' . '<a href="localhost:8888/test/Systaire/layouts/article.php">' . $fetch_categorie['categorie'] . '</a>' . '</li>';
+                ?>
+                    <li><a href="http://localhost:8888/test/Systaire/layouts/article.php"><?php echo $fetch_categorie['categorie']?></a></li>
+                <?php
             }
         ?>
         <li><a href="http://localhost:8888/test/Systaire/layouts/create_articles.php">Create articles</a></li>
