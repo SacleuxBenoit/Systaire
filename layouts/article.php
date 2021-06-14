@@ -16,6 +16,19 @@ include('../database/connection_database.php');
 <body>
     <?php
         include('../components/header.php');
+
+        $select_article = $bdd->prepare('SELECT * FROM articles WHERE categorie = :categorie');
+        $select_article->bindParam(':categorie', $_GET['categorie']);
+        $select_article->execute();
+
+        while($display_article = $select_article->fetch()){
+            ?>
+                <div class="article">
+                    <p><h2><a href="./layouts/article.php?title=<?php echo $display_article['title']?>"><?php echo $display_article['title'] ?></a></h2></p>
+                    <p><?php echo $display_article['smallDesc']?></p>
+                </div>
+            <?php
+        }
     ?>
 </body>
 </html>
