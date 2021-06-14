@@ -14,6 +14,8 @@ include('../database/connection_database.php');
     <title>Document</title>
 </head>
 <body>
-
+    <?php
+        include('../components/header.php');
+    ?>
 </body>
 </html>
