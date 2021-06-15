@@ -10,7 +10,7 @@
         <?php
             while($fetch_categorie = $get_categorie->fetch()){
                 ?>
-                    <li><a href="localhost:8888/test/Systaire/layouts/category.php?categorie=<?php echo $fetch_categorie['categorie']?>"><?php echo $fetch_categorie['categorie']?></a></li>
+                    <li><a href="http://localhost:8888/test/Systaire/layouts/category.php?categorie=<?php echo $fetch_categorie['categorie']?>"><?php echo $fetch_categorie['categorie']?></a></li>
                 <?php
             }
         ?>
