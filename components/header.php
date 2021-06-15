@@ -6,7 +6,7 @@
     <h1><a href="http://localhost:8888/test/Systaire/">Systaire</a></h1>
 
     <ul>
-        <li><a href="#">Accueil</a></li>
+        <li><a href="http://localhost:8888/test/Systaire/">Accueil</a></li>
         <?php
             while($fetch_categorie = $get_categorie->fetch()){
                 ?>
