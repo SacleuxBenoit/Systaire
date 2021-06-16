@@ -15,6 +15,17 @@ include('../database/connection_database.php');
 <body>
     <?php
         include('../components/header.php');
+        $select_article = $bdd->prepare('SELECT * FROM articles WHERE title = :title');
+        $select_article->bindParam(':title', $_GET['title']);
+        $select_article->execute();
+
+        $fetch_article = $select_article->fetch();
     ?>
+
+    <h1><?php echo $fetch_article['title']?></h1>
+
+    <p>
+        <?php echo $fetch_article['content']?>
+    </p>
 </body>
 </html>
