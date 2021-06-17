@@ -26,6 +26,9 @@ include('../database/connection_database.php');
                 <div class="article">
                     <p><h2><a href="./article.php?title=<?php echo $display_article['title']?>"><?php echo $display_article['title'] ?></a></h2></p>
                     <p><?php echo $display_article['smallDesc']?></p>
+
+                    <a href="./article.php?title=<?php echo $display_article['title']?>">see more</a> 
+
                 </div>
             <?php
         }

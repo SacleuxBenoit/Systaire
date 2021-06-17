@@ -28,6 +28,7 @@ include('./database/connection_database.php');
                     <p>
                         <?php echo $display_article['smallDesc']?> 
                     </p>
+                    
                     <a href="./layouts/article.php?title=<?php echo $display_article['title']?>">see more</a> 
 
                 </div>
