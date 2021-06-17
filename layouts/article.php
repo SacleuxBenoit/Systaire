@@ -30,7 +30,7 @@ include('../database/connection_database.php');
     </p>
 
     <div class="divComment">
-        <form action="#">
+        <form action="../database/Article/article_comment.php">
             <p>
                 <label for="comment">your comment :</label>
                 <input type="text" name="comment" id="comment">
