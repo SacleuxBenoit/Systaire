@@ -28,5 +28,19 @@ include('../database/connection_database.php');
     <p>
         <?php echo $fetch_article['content']?>
     </p>
+
+    <div class="divComment">
+        <form action="#">
+            <p>
+                <label for="comment">your comment :</label>
+                <input type="text" name="comment" id="comment">
+            </p>
+
+            <p>
+                <input type="submit" value="Submit">
+            </p>
+
+        </form>
+    </div>
 </body>
 </html>
