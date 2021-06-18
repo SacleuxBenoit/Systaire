@@ -16,6 +16,8 @@ include('../database/connection_database.php');
 <body>
     <?php
         include('../components/header.php');
+
+        // prepared statement : SELECT articles
         $select_article = $bdd->prepare('SELECT * FROM article WHERE title = :title');
         $select_article->bindParam(':title', $_GET['title']);
         $select_article->execute();
@@ -23,15 +25,12 @@ include('../database/connection_database.php');
         $fetch_article = $select_article->fetch();
 
         $_SESSION['id_article'] = $fetch_article['id_article'];
-    ?>
+    
+        // display articles 
+        echo '<h1>' .$fetch_article['title']. '</h1>';
+        echo '<p>' . $fetch_article['content'] . '</p>';
 
-    <h1><?php echo $fetch_article['title']?></h1>
-
-    <p>
-        <?php echo $fetch_article['content']?>
-    </p>
-
-    <?php
+        // Verify if user is login for the comment section
         if(!empty($_SESSION['username'])){
     ?>
         <div class="divComment">
