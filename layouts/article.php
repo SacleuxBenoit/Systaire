@@ -21,6 +21,8 @@ include('../database/connection_database.php');
         $select_article->execute();
 
         $fetch_article = $select_article->fetch();
+
+        $_SESSION['id_article'] = $fetch_article['id_article'];
     ?>
 
     <h1><?php echo $fetch_article['title']?></h1>
@@ -30,7 +32,7 @@ include('../database/connection_database.php');
     </p>
 
     <div class="divComment">
-        <form action="../database/Article/article_comment.php">
+        <form action="../database/Article/article_comment.php" method="post">
             <p>
                 <label for="comment">your comment :</label>
                 <input type="text" name="comment" id="comment">
