@@ -31,18 +31,31 @@ include('../database/connection_database.php');
         <?php echo $fetch_article['content']?>
     </p>
 
-    <div class="divComment">
-        <form action="../database/Article/article_comment.php" method="post">
-            <p>
-                <label for="comment">your comment :</label>
-                <input type="text" name="comment" id="comment">
-            </p>
+    <?php
+        if(!empty($_SESSION['username'])){
+    ?>
+        <div class="divComment">
+            <form action="../database/Article/article_comment.php" method="post">
+                <p>
+                    <label for="comment">your comment :</label>
+                    <input type="text" name="comment" id="comment">
+                </p>
 
-            <p>
-                <input type="submit" value="Submit">
-            </p>
+                <p>
+                    <input type="submit" value="Submit">
+                </p>
 
-        </form>
-    </div>
+            </form>
+        </div>
+    <?php
+        }else{
+        ?>
+            <div class="divComment">
+                <p>pour écrire un commentaire vous devez vous <u><a href="./login_createAccount.php">connecter</a></u></p>
+            </div>
+        <?php
+        }
+    ?>
+
 </body>
 </html>
