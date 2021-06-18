@@ -17,7 +17,7 @@ include('./database/connection_database.php');
     <?php
         include('./components/header.php');
 
-        $get_article = $bdd->query('SELECT * FROM articles LIMIT 10');
+        $get_article = $bdd->query('SELECT * FROM article LIMIT 10');
         $get_article->execute();
 
         while($display_article = $get_article->fetch()){

@@ -17,7 +17,7 @@ include('../database/connection_database.php');
     <?php
         include('../components/header.php');
 
-        $select_article = $bdd->prepare('SELECT * FROM articles WHERE categorie = :categorie');
+        $select_article = $bdd->prepare('SELECT * FROM article WHERE categorie = :categorie');
         $select_article->bindParam(':categorie', $_GET['categorie']);
         $select_article->execute();
 
