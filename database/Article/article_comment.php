@@ -18,5 +18,5 @@ $insert_comment->bindParam(':id_user',$get_id_user['id_user']);
 $insert_comment->bindParam(':id_article', $_SESSION['id_article']);
 $insert_comment->bindParam(':comment', $_POST['comment']);
 $insert_comment->execute();
-header('Location: ../../layouts/article.php');
+header('Location: ../../index.php');
 ?>
