@@ -30,6 +30,17 @@ include('../database/connection_database.php');
         echo '<h1>' .$fetch_article['title']. '</h1>';
         echo '<p>' . $fetch_article['content'] . '</p>';
 
+        // prepared statement : SELECT comments
+
+        $select_comment = $bdd->prepare('SELECT * FROM comment WHERE id_article = :id_article');
+        $select_comment->bindParam(':id_article', $fetch_article['id_article']);
+        $select_comment->execute();
+
+        while($fetch_comment = $select_comment->fetch()){
+            // display comments
+            echo '<p class="divComment">' . $fetch_comment['comment'] . '</p>';
+        }
+
         // Verify if user is login for the comment section
         if(!empty($_SESSION['username'])){
     ?>
