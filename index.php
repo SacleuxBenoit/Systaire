@@ -11,7 +11,7 @@ include('./database/connection_database.php');
     <link rel="stylesheet" href="./css/style_components/components_header.css">
     <link rel="stylesheet" href="./css/style_index.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Systaire</title>
 </head>
 <body>
     <?php

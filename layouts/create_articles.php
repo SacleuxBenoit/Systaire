@@ -14,7 +14,7 @@ include('../database/connection_database.php');
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/style_components/components_header.css">
     <link rel="stylesheet" href="../css/style_create_articles.css">
-    <title>Document</title>
+    <title>Systaire - CREATE ARTICLE</title>
 </head>
 <body>
     <?php

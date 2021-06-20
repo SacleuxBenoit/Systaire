@@ -14,7 +14,7 @@ if(!isset($_GET['title'])){
     <link rel="stylesheet" href="../css/style_components/components_header.css">
     <link rel="stylesheet" href="../css/style_article.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Systaire - ARTICLE</title>
 </head>
 <body>
     <?php
