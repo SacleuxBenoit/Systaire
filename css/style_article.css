@@ -6,4 +6,10 @@ body{
 
 .divComment{
     border: 1px solid black;
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+}
+
+.notificationLogin{
+    border: 1px solid black;
 }
