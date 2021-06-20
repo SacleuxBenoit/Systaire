@@ -41,7 +41,7 @@ if(!isset($_GET['title'])){
 
         while($fetch_comment = $select_comment->fetch()){
             // display comments
-            echo '<p class="divComment">' . $fetch_comment['comment'] . '</p>';
+            echo '<div class="divComment">' . $fetch_comment['comment'] . '</div>';
         }
 
         // Verify if user is login for the comment section
@@ -63,7 +63,7 @@ if(!isset($_GET['title'])){
     <?php
         }else{
         ?>
-            <div class="divComment">
+            <div class="notificationLogin">
                 <p>pour écrire un commentaire vous devez vous <u><a href="./login_createAccount.php">connecter</a></u></p>
             </div>
         <?php
