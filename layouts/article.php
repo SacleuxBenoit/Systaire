@@ -32,14 +32,22 @@ if(!isset($_GET['title'])){
         /* ---------------------- display articles ---------------------- */
         echo '<h1>' .$fetch_article['title']. '</h1>';
         echo '<p>' . $fetch_article['content'] . '</p>';
+
+        /* ---------------------- admin pannel ---------------------- */
+        $select_user_admin = $bdd->prepare('SELECT is_admin FROM user WHERE username = :username');
+        $select_user_admin->bindParam(':username', $_SESSION['username']);
+        $select_user_admin->execute();
+
+        $user_admin = $select_user_admin->fetch();
+
+        if($user_admin['is_admin']){
         ?>
-        <!-- ---------------------- admin pannel ---------------------- -->
-
-        <div class="adminPannel">
-            <p><a href="./modify_article.php">Modify</a> | <a href="../database/Article/article_delete_database.php">Delete</a></p> 
-        </div>
-
+            <div class="adminPannel">
+                <p><a href="./modify_article.php">Modify</a> | <a href="../database/Article/article_delete_database.php">Delete</a></p> 
+            </div>
         <?php
+        }
+ 
         // prepared statement : SELECT comments
 
         $select_comment = $bdd->prepare('SELECT * FROM comment WHERE id_article = :id_article');
