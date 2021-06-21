@@ -29,10 +29,17 @@ if(!isset($_GET['title'])){
 
         $_SESSION['id_article'] = $fetch_article['id_article'];
     
-        // display articles 
+        /* ---------------------- display articles ---------------------- */
         echo '<h1>' .$fetch_article['title']. '</h1>';
         echo '<p>' . $fetch_article['content'] . '</p>';
+        ?>
+        <!-- ---------------------- admin pannel ---------------------- -->
 
+        <div class="adminPannel">
+            <p><a href="#">Modify</a> | <a href="#">Delete</a></p> 
+        </div>
+
+        <?php
         // prepared statement : SELECT comments
 
         $select_comment = $bdd->prepare('SELECT * FROM comment WHERE id_article = :id_article');
@@ -44,7 +51,7 @@ if(!isset($_GET['title'])){
             echo '<div class="divComment">' . $fetch_comment['comment'] . '</div>';
         }
 
-        // Verify if user is login for the comment section
+        /* ---------------------- Verify if user is login for the comment section ---------------------- */
         if(!empty($_SESSION['username'])){
     ?>
         <div class="divComment">
@@ -60,13 +67,14 @@ if(!isset($_GET['title'])){
 
             </form>
         </div>
+        
     <?php
         }else{
-        ?>
-            <div class="notificationLogin">
-                <p>pour écrire un commentaire vous devez vous <u><a href="./login_createAccount.php">connecter</a></u></p>
-            </div>
-        <?php
+    ?>
+        <div class="notificationLogin">
+            <p>pour écrire un commentaire vous devez vous <u><a href="./login_createAccount.php">connecter</a></u></p>
+        </div>
+    <?php
         }
     ?>
 
