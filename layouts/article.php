@@ -36,7 +36,7 @@ if(!isset($_GET['title'])){
         <!-- ---------------------- admin pannel ---------------------- -->
 
         <div class="adminPannel">
-            <p><a href="#">Modify</a> | <a href="#">Delete</a></p> 
+            <p><a href="#">Modify</a> | <a href="../database/Article/article_delete_database.php">Delete</a></p> 
         </div>
 
         <?php
