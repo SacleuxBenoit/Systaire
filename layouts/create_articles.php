@@ -39,13 +39,21 @@ include('../database/connection_database.php');
             </p>
 
             <p>
+            <select name="categorie" id="categorie">
             <label for="categorie">categorie : </label>
-                <select name="categorie" id="categorie">
-                    <option value="Nasa">Nasa</option>
-                    <option value="Space x">Space x</option>
-                    <option value="USA">USA</option>
-                    <option value="Europe">Europe</option>
-                </select>
+            <?php
+
+                $select_category = $bdd->query('SELECT categorie FROM categorie');
+                $select_category->execute();
+
+                while($display_category = $select_category->fetch()){
+                    ?>
+                        <option value="<?php echo $display_category['categorie']?>"><?php echo $display_category['categorie']?></option>
+                    <?php
+                }
+            ?>
+            </select>
+
             </p>
 
             <p>
