@@ -34,13 +34,13 @@ if(!isset($_GET['title'])){
         echo '<p>' . $fetch_article['content'] . '</p>';
 
         /* ---------------------- admin pannel ---------------------- */
-        $select_user_admin = $bdd->prepare('SELECT is_admin FROM user WHERE username = :username');
-        $select_user_admin->bindParam(':username', $_SESSION['username']);
-        $select_user_admin->execute();
+        $select_user_infos = $bdd->prepare('SELECT * FROM user WHERE username = :username');
+        $select_user_infos->bindParam(':username', $_SESSION['username']);
+        $select_user_infos->execute();
 
-        $user_admin = $select_user_admin->fetch();
+        $user_infos = $select_user_infos->fetch();
 
-        if($user_admin['is_admin']){
+        if($user_infos['is_admin']){
         ?>
             <div class="adminPannel">
                 <p><a href="./modify_article.php">Modify</a> | <a href="../database/Article/article_delete_database.php">Delete</a></p> 
