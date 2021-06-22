@@ -30,7 +30,7 @@ if(!isset($_GET['title'])){
         $_SESSION['id_article'] = $fetch_article['id_article'];
     
         /* ---------------------- display articles ---------------------- */
-        echo '<h1>' .$fetch_article['title']. '</h1>';
+        echo '<h1>' . '<u>'. $fetch_article['title']. '</u>'.'</h1>';
         echo '<p>' . $fetch_article['content'] . '</p>';
 
         /* ---------------------- admin pannel ---------------------- */
