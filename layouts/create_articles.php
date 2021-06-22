@@ -39,8 +39,13 @@ include('../database/connection_database.php');
             </p>
 
             <p>
-                <label for="categorie">categorie :</label>
-                <input type="text" name="categorie" id="categorie">
+            <label for="categorie">categorie : </label>
+                <select name="categorie" id="categorie">
+                    <option value="Nasa">Nasa</option>
+                    <option value="Space x">Space x</option>
+                    <option value="USA">USA</option>
+                    <option value="Europe">Europe</option>
+                </select>
             </p>
 
             <p>
