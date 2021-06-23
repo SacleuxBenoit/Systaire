@@ -40,7 +40,7 @@ if(!isset($_GET['title'])){
 
         $user_infos = $select_user_infos->fetch();
 
-        if($user_infos['is_admin']){
+        if(isset($user_infos['is_admin'])){
         ?>
             <div class="adminPannel">
                 <p><a href="./modify_article.php">Modify</a> | <a href="../database/Article/article_delete_database.php">Delete</a></p> 
