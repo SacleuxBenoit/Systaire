@@ -56,9 +56,7 @@ if(!isset($_GET['title'])){
 
         while($fetch_comment = $select_comment->fetch()){
             // display comments
-            echo '<div class="divComment">' . '<p>' . $user_infos['username'] . '</p>'
-                                            . '<p>' . $fetch_comment['comment'] . '</p>'
-                 .'</div>';
+            echo '<div class="divComment">' . '<p>' . $fetch_comment['comment'] . '</p>' . '</div>';
         }
 
         /* ---------------------- Verify if user is login for the comment section ---------------------- */
