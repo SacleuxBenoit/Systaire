@@ -2,6 +2,7 @@
 session_start();
 include('../login_database.php');
 include('../database/connection_database.php');
+$_SESSION['username'] = $_POST['SettingsPseudo'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
