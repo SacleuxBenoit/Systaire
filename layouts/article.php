@@ -43,7 +43,7 @@ if(!isset($_GET['title'])){
         if(isset($user_infos['is_admin'])){
         ?>
             <div class="adminPannel">
-                <p><a href="./modify_article.php">Modify</a> | <a href="../database/Article/article_delete_database.php">Delete</a></p> 
+                <p><a href="./modify_article.php">Modify</a> | <button onclick="messageDelete()">Delete</button></p> 
             </div>
         <?php
         }
@@ -88,5 +88,6 @@ if(!isset($_GET['title'])){
         }
     ?>
 
+<script src="../js/confirmation_delete.js"></script>
 </body>
 </html>
