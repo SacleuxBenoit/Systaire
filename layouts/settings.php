@@ -17,13 +17,23 @@ $_SESSION['username'] = $_POST['SettingsPseudo'];
     <?php
         include('../components/header.php');
     ?>
-    <form action="../database/User/user_settings_database.php" method="post">
+    <form action="../database/Settings/settings_rename_database.php" method="post">
         <p>
             <label for="changeUsername">change username :</label>
             <input type="text" name="changeUsername" id="changeUsername">
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+
+    <form action="../database/Settings/settings_changePassword.php" method="post">
+        <p>
+            <label for="changePassword">change password :</label>
+            <input type="text" name="changePassword" id="changePassword">
         </p>
 
         <p>
+            <label for="confirmPassword">confirm password :</label>
+            <input type="text" name="confirmPassword" id="confirmPassword">
             <input type="submit" value="Submit">
         </p>
     </form>
