@@ -3,6 +3,10 @@ session_start();
 include('../../login_database.php');
 include('../connection_database.php');
 
+if(!isset($_SESSION['username'])){
+    header('Location: ../../index.php');
+}
+
 $select_id_user = $bdd->prepare('SELECT id_user FROM user WHERE username = :username');
 $select_id_user->bindParam(':username', $_SESSION['username']);
 $select_id_user->execute();

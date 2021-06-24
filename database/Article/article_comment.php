@@ -3,6 +3,9 @@ session_start();
 include('../../login_database.php');
 include('../connection_database.php');
 
+if(!isset($_SESSION['username'])){
+    header('Location: ../../index.php');
+}
 // get id of current user
 
 $select_user = $bdd->prepare('SELECT id_user FROM user WHERE username = :username');
