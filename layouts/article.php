@@ -32,7 +32,7 @@ if(!isset($_GET['title'])){
         $_SESSION['id_article'] = $fetch_article['id_article'];
     
         /* ---------------------- display articles ---------------------- */
-        echo '<h1>' . '<u>'. $fetch_article['title']. '</u>'.'</h1>';
+        echo '<h1>' . '<u>'. htmlspecialchars($fetch_article['title']). '</u>'.'</h1>';
         echo '<p>' . $fetch_article['content'] . '</p>';
 
         /* ---------------------- admin pannel ---------------------- */
@@ -58,7 +58,7 @@ if(!isset($_GET['title'])){
 
         while($fetch_comment = $select_comment->fetch()){
             // display comments
-            echo '<div class="divComment">' . '<p>' . $fetch_comment['comment'] . '</p>' . '</div>';
+            echo '<div class="divComment">' . '<p>' . htmlspecialchars($fetch_comment['comment']) . '</p>' . '</div>';
         }
 
         /* ---------------------- Verify if user is login for the comment section ---------------------- */

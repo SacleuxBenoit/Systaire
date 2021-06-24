@@ -48,7 +48,7 @@ include('../database/connection_database.php');
 
                 while($display_category = $select_category->fetch()){
                     ?>
-                        <option value="<?php echo $display_category['categorie']?>"><?php echo $display_category['categorie']?></option>
+                        <option value="<?php echo htmlspecialchars($display_category['categorie'])?>"><?php echo htmlspecialchars($display_category['categorie'])?></option>
                     <?php
                 }
             ?>
