@@ -4,6 +4,8 @@ include('../login_database.php');
 include('../database/connection_database.php');
 if(!isset($_GET['title'])){
     header('Location: ../index.php');
+}else{
+    $_SESSION['title'] = $_GET['title'];
 }
 ?>
 <!DOCTYPE html>
