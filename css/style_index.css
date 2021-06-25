@@ -2,11 +2,19 @@ body{
     display: grid;
     margin-left: 10%;
     margin-right: 10%;
+    color: whitesmoke;
+    background-color: black;
 }
 
+a{
+    color: whitesmoke;
+}
+.container{
+    background-color: #025930;
+}
 /* ------------------------------- Article -------------------------------*/
 
 .article{
-    border-bottom: 0.5px solid black;
+    border-bottom: 0.5px solid whitesmoke;
     width: 55%;
 }
