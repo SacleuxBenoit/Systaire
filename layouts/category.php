@@ -20,18 +20,21 @@ include('../database/connection_database.php');
         $select_article = $bdd->prepare('SELECT * FROM article WHERE categorie = :categorie');
         $select_article->bindParam(':categorie', $_GET['categorie']);
         $select_article->execute();
-
-        while($display_article = $select_article->fetch()){
-            ?>
-                <div class="article">
-                    <p><h2><a href="./article.php?title=<?php echo htmlspecialchars($display_article['title'])?>"><?php echo htmlspecialchars($display_article['title'])?></a></h2></p>
-                    <p><?php echo $display_article['smallDesc']?></p>
-
-                    <a href="./article.php?title=<?php echo htmlspecialchars($display_article['title'])?>">see more</a> 
-
-                </div>
+        ?>
+        <div class="container">
             <?php
-        }
-    ?>
+            while($display_article = $select_article->fetch()){
+                ?>
+                    <div class="article">
+                        <p><h2><a href="./article.php?title=<?php echo htmlspecialchars($display_article['title'])?>"><?php echo htmlspecialchars($display_article['title'])?></a></h2></p>
+                        <p><?php echo $display_article['smallDesc']?></p>
+
+                        <a href="./article.php?title=<?php echo htmlspecialchars($display_article['title'])?>">see more</a> 
+
+                    </div>
+                <?php
+            }
+            ?>
+        </div>
 </body>
 </html>
