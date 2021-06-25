@@ -22,6 +22,7 @@ include('./database/connection_database.php');
 
         while($display_article = $get_article->fetch()){
             ?>
+            <div class="container">
                 <div class="article">
                     <p>
                         <h2>
@@ -37,7 +38,8 @@ include('./database/connection_database.php');
 
                 </div>
             <?php
-        }
-    ?>
+                }
+            ?>
+        </div>
 </body>
 </html>
