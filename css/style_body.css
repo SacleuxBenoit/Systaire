@@ -6,6 +6,10 @@ body{
     background-color: black;
 }
 
+.titleArticle{
+    font-size: 1.5em;
+}
+
 a{
     color: whitesmoke;
 }

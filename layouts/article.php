@@ -37,7 +37,7 @@ if(!isset($_GET['title'])){
         <?php
 
         /* ---------------------- display articles ---------------------- */
-        echo '<h1>' . '<u>'. htmlspecialchars($fetch_article['title']). '</u>'.'</h1>';
+        echo '<h1 class="titleArticle">' . '<u>'. htmlspecialchars($fetch_article['title']). '</u>'.'</h1>';
         echo '<p>' . $fetch_article['content'] . '</p>';
 
         /* ---------------------- admin pannel ---------------------- */
