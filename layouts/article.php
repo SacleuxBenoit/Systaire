@@ -31,7 +31,11 @@ if(!isset($_GET['title'])){
         $fetch_article = $select_article->fetch();
 
         $_SESSION['id_article'] = $fetch_article['id_article'];
-    
+
+        ?>
+        <div class="container">
+        <?php
+
         /* ---------------------- display articles ---------------------- */
         echo '<h1>' . '<u>'. htmlspecialchars($fetch_article['title']). '</u>'.'</h1>';
         echo '<p>' . $fetch_article['content'] . '</p>';
@@ -88,6 +92,7 @@ if(!isset($_GET['title'])){
     <?php
         }
     ?>
+    </div>
 
 <script src="../js/confirmation_delete.js"></script>
 </body>
