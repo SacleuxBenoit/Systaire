@@ -25,13 +25,14 @@
             if(!empty($_SESSION['username']) && isset($verify_is_admin['is_admin'])){
         ?>
             <li><a href="http://localhost:8888/test/Systaire/layouts/create_articles.php">Create articles</a></li>
+            <li><a href="http://localhost:8888/test/Systaire/layouts/settings.php">Settings</a></li>
             <li><a href="http://localhost:8888/test/Systaire/database/User/user_logout_database.php">Logout</a></li>
         <?php
             // if user is login and it's not an admin
             }else if(!empty($_SESSION['username'])){
         ?>
-        <li><a href="http://localhost:8888/test/Systaire/database/User/user_logout_database.php">Logout</a></li>
-
+            <li><a href="http://localhost:8888/test/Systaire/layouts/settings.php">Settings</a></li>
+            <li><a href="http://localhost:8888/test/Systaire/database/User/user_logout_database.php">Logout</a></li>
         <?php
             // user isn't login : display link to login / create account
         }else{
