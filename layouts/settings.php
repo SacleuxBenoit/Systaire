@@ -3,15 +3,16 @@ session_start();
 include('../login_database.php');
 include('../database/connection_database.php');
 
-$find_username = $bdd->prepare('SELECT username FROM user WHERE username = :username');
-$find_username->bindParam(':username', $_POST['SettingsPseudo']);
-$find_username->execute();
-$verify_username = $find_username->fetch();
+// verify if user have an account 
+$find_account = $bdd->prepare('SELECT * FROM user WHERE username = :username');
+$find_account->bindParam(':username', $_POST['SettingsPseudo']);
+$find_account->execute();
+$verify_account = $find_account->fetch();
 
-if(!$verify_username['username']){
-    header('Location: ../index.php');
-}else{
+if($verify_account['username'] == $_POST['SettingsPseudo'] && password_verify($_POST['SettingsPass'],$verify_account['pass'])){
     $_SESSION['username'] = $_POST['SettingsPseudo'];
+}else{
+       /* header('Location: ../index.php');*/
 }
 ?>
 <!DOCTYPE html>
