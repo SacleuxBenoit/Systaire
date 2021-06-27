@@ -10,8 +10,7 @@ $verify_username = $find_username->fetch();
 
 if(!$verify_username['username']){
     header('Location: ../index.php');
-}
-if(isset($_POST['SettingsPseudo'])){
+}else{
     $_SESSION['username'] = $_POST['SettingsPseudo'];
 }
 ?>
