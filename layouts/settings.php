@@ -12,7 +12,7 @@ $verify_account = $find_account->fetch();
 if($verify_account['username'] == $_POST['SettingsPseudo'] && password_verify($_POST['SettingsPass'],$verify_account['pass'])){
     $_SESSION['username'] = $_POST['SettingsPseudo'];
 }else{
-       /* header('Location: ../index.php');*/
+    header('Location: ../index.php');
 }
 ?>
 <!DOCTYPE html>
