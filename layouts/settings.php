@@ -9,9 +9,9 @@ $find_account->bindParam(':username', $_POST['SettingsPseudo']);
 $find_account->execute();
 $verify_account = $find_account->fetch();
 
-if($verify_account['username'] == $_POST['SettingsPseudo'] && password_verify($_POST['SettingsPass'],$verify_account['pass'])){
+if(isset($verify_account['username']) == isset($_POST['SettingsPseudo']) && password_verify(isset($_POST['SettingsPass']),isset($verify_account['pass']))){
     $_SESSION['username'] = $_POST['SettingsPseudo'];
-}else{
+}else if(!isset($_SESSION['username'])){
     header('Location: ../index.php');
 }
 ?>
