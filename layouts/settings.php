@@ -50,6 +50,9 @@ if(isset($verify_account['username']) == isset($_POST['SettingsPseudo']) && pass
                 <input type="submit" value="Submit">
             </p>
         </form>
+
+        <button onclick="deleteAccount()">Delete account</button>
     </div>
+    <script src="../js/confirmation_delete.js"></script>
 </body>
 </html>
