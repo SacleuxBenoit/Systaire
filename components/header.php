@@ -22,7 +22,7 @@
                 <?php
             }
             // verify if user is login + if it's an admin
-            if(!empty($_SESSION['username']) && $verify_is_admin['is_admin'] == true){
+            if(!empty($_SESSION['username']) && isset($verify_is_admin['is_admin']) == true){
         ?>
             <li><a href="http://localhost:8888/test/Systaire/layouts/create_articles.php">Create articles</a></li>
             <li><a href="http://localhost:8888/test/Systaire/layouts/settings.php">Settings</a></li>
