@@ -2,6 +2,15 @@
 session_start();
 include('../login_database.php');
 include('../database/connection_database.php');
+
+$find_username = $bdd->prepare('SELECT username FROM user WHERE username = :username');
+$find_username->bindParam(':username', $_POST['SettingsPseudo']);
+$find_username->execute();
+$verify_username = $find_username->fetch();
+
+if(!$verify_username['username']){
+    header('Location: ../index.php');
+}
 if(isset($_POST['SettingsPseudo'])){
     $_SESSION['username'] = $_POST['SettingsPseudo'];
 }
