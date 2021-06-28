@@ -19,7 +19,7 @@ include('../database/connection_database.php');
         include('../components/header.php');
     ?>
 
-    <div>
+    <div class="container">
         <form action="../database/Article/article_modify_database.php" method="post">
             <p>
                 <label for="modifyTitle">Titre :</label>
