@@ -14,6 +14,9 @@ if(!$user_found){
     $change_username->bindParam(':newUsername', $_POST['changeUsername']);
     $change_username->bindParam(':username', $_SESSION['username']);
     $change_username->execute();
+
+    $_SESSION['username'] = $_POST['changeUsername'];
+
     header('Location: ../../index.php');
 }else{
     header('Location: ../../layouts/settings.php');
