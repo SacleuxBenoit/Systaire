@@ -2,18 +2,6 @@
 session_start();
 include('../login_database.php');
 include('../database/connection_database.php');
-
-// verify if user have an account 
-$find_account = $bdd->prepare('SELECT * FROM user WHERE username = :username');
-$find_account->bindParam(':username', $_POST['SettingsPseudo']);
-$find_account->execute();
-$verify_account = $find_account->fetch();
-
-if(isset($verify_account['username']) == isset($_POST['SettingsPseudo']) && password_verify(isset($_POST['SettingsPass']),isset($verify_account['pass'])) || isset($_POST['SettingsPseudo'])){
-    $_SESSION['username'] = $_POST['SettingsPseudo'];
-}else if(!isset($_SESSION['username'])){
-    header('Location: ../index.php');
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
