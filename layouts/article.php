@@ -69,7 +69,7 @@ if(!isset($_GET['title'])){
                         <?php echo htmlspecialchars($fetch_comment['comment']);
                             if(isset($user_infos['is_admin'])){
                                 ?>
-                                    <button onclick="deleteComment()">delete</button>
+                                    <a href="../database/Comment/delete_comment.php?id_comment=<?php echo $fetch_comment['id_comment']?>">Delete</a>
                                 <?php
                             }
                         ?>
