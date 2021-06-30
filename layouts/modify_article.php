@@ -17,23 +17,29 @@ include('../database/connection_database.php');
 <body>
     <?php
         include('../components/header.php');
+
+        $find_article = $bdd->prepare('SELECT * FROM article WHERE title =:title');
+        $find_article->bindParam(':title', $_GET['title']);
+        $find_article->execute();
+
+        $article = $find_article->fetch();
     ?>
 
     <div class="container">
         <form action="../database/Article/article_modify_database.php" method="post">
             <p>
                 <label for="modifyTitle">Titre :</label>
-                <input type="text" name="modifyTitle" id="modifyTitle">
+                <input type="text" name="modifyTitle" id="modifyTitle" placeholder="<?php echo $article['title']?>">
             </p>
 
             <p>
                 <label for="modifyContent">Content :</label>
-                <input type="text" name="modifyContent" id="modifyContent">
+                <input type="text" name="modifyContent" id="modifyContent" placeholder="<?php echo $article['content']?>">
             </p>
 
             <p>
                 <label for="modifySmallDesc">description :</label>
-                <input type="text" name="modifySmallDesc" id="modifySmallDesc">
+                <input type="text" name="modifySmallDesc" id="modifySmallDesc" placeholder="<?php echo $article['smallDesc']?>">
             </p>
 
             <p>
