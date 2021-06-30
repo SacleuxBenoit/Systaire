@@ -13,3 +13,11 @@ function deleteAccount(){
         document.location.href="../database/Settings/settings_deleteAccount_database.php";
     }
 }
+
+function deleteComment(){
+    let resultDeleteComment = confirm('Are you sure you want to delete this comment ?');
+
+    if(resultDeleteComment){
+        document.location.href="../database/Comment/delete_comment.php";
+    }
+}
