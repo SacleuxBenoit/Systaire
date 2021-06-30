@@ -50,7 +50,7 @@ if(!isset($_GET['title'])){
         if(isset($user_infos['is_admin'])){
         ?>
             <div class="adminPannel">
-                <p><a href="./modify_article.php">Modify</a> | <button onclick="messageDelete()">Delete</button></p> 
+                <p><a href="./modify_article.php?title=<?php echo $fetch_article['title']?>">Modify</a> | <button onclick="messageDelete()">Delete</button></p> 
             </div>
         <?php
         }
