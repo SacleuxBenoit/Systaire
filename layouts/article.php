@@ -63,7 +63,20 @@ if(!isset($_GET['title'])){
 
         while($fetch_comment = $select_comment->fetch()){
             // display comments
-            echo '<div class="divComment">' . '<p>' . htmlspecialchars($fetch_comment['comment']) . '</p>' . '</div>';
+            ?> 
+                <div class="divComment">
+                    <p>
+                        <?php echo htmlspecialchars($fetch_comment['comment']);
+                            if(isset($user_infos['is_admin'])){
+                                ?>
+                                    <button onclick="deleteComment()">delete</button>
+                                <?php
+                            }
+                        ?>
+                    </p>
+                </div>
+            <?php
+
         }
 
         /* ---------------------- Verify if user is login for the comment section ---------------------- */
