@@ -29,12 +29,12 @@ include('../database/connection_database.php');
         <form action="../database/Settings/settings_changePassword.php" method="post">
             <p>
                 <label for="changePassword">change password :</label>
-                <input type="text" name="changePassword" id="changePassword">
+                <input type="password" name="changePassword" id="changePassword">
             </p>
 
             <p>
                 <label for="confirmPassword">confirm password :</label>
-                <input type="text" name="confirmPassword" id="confirmPassword">
+                <input type="password" name="confirmPassword" id="confirmPassword">
                 <input type="submit" value="Submit">
             </p>
         </form>
