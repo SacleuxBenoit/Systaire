@@ -29,17 +29,17 @@ include('../database/connection_database.php');
         <form action="../database/Article/article_modify_database.php" method="post">
             <p>
                 <label for="modifyTitle">Titre :</label>
-                <input type="text" name="modifyTitle" id="modifyTitle" placeholder="<?php echo $article['title']?>">
+                <textarea name="modifyTitle" id="modifyTitle" cols="60" rows="1"><?php echo $article['title']?></textarea>
             </p>
 
             <p>
                 <label for="modifyContent">Content :</label>
-                <input type="text" name="modifyContent" id="modifyContent" placeholder="<?php echo $article['content']?>">
+                <textarea name="modifyContent" id="modifyContent" cols="60" rows="10"><?php echo $article['content']?></textarea>
             </p>
 
             <p>
                 <label for="modifySmallDesc">description :</label>
-                <input type="text" name="modifySmallDesc" id="modifySmallDesc" placeholder="<?php echo $article['smallDesc']?>">
+                <textarea name="modifySmallDesc" id="modifySmallDesc" cols="20" rows="2"><?php echo $article['smallDesc']?></textarea>
             </p>
 
             <p>
