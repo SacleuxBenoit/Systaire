@@ -31,7 +31,7 @@ include('../database/connection_database.php');
 
                 <p>
                     <label for="content">Content :</label>
-                    <input type="text" name="content" id="content">
+                    <textarea name="content" id="content" cols="130" rows="10"></textarea>
                 </p>
 
                 <p>
