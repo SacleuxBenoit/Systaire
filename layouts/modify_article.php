@@ -29,7 +29,7 @@ include('../database/connection_database.php');
         <form action="../database/Article/article_modify_database.php" method="post">
             <p>
                 <label for="modifyTitle">Titre :</label>
-                <textarea name="modifyTitle" id="modifyTitle" cols="60" rows="1"><?php echo $article['title']?></textarea>
+                <textarea name="modifyTitle" id="modifyTitle" cols="60" rows="1"><?php echo htmlspecialchars($article['title'])?></textarea>
             </p>
 
             <p>
@@ -39,7 +39,7 @@ include('../database/connection_database.php');
 
             <p>
                 <label for="modifySmallDesc">description :</label>
-                <textarea name="modifySmallDesc" id="modifySmallDesc" cols="20" rows="2"><?php echo $article['smallDesc']?></textarea>
+                <textarea name="modifySmallDesc" id="modifySmallDesc" cols="20" rows="2"><?php echo htmlspecialchars($article['smallDesc'])?></textarea>
             </p>
 
             <p>
