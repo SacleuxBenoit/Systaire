@@ -39,6 +39,18 @@ include('../database/connection_database.php');
             </p>
         </form>
 
+        <form action="#" method="post">
+            <p>
+                <label for="darkMode">darkMode :</label>
+                <select name="darkMode" id="darkMode">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+
+                <input type="submit" value="Submit">
+            </p>
+        </form>
+
         <button onclick="deleteAccount()">Delete account</button>
     </div>
     <script src="../js/confirmation_delete.js"></script>
